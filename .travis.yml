@@ -8,7 +8,7 @@ language: bash
 env:
   matrix:
   - DOCKER_ARCH=amd64
-  - DOCKER_ARCH=arm64
+  # - DOCKER_ARCH=arm64 problems with python and qemu
   - DOCKER_ARCH=arm
 
 script:
