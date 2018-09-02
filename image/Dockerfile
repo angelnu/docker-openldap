@@ -1,7 +1,11 @@
 # Use osixia/light-baseimage
-# sources: https://github.com/osixia/docker-light-baseimage
-FROM osixia/light-baseimage:1.1.1
-MAINTAINER Bertrand Gouny <bertrand.gouny@osixia.net>
+ARG BASE=none
+FROM $BASE
+
+ARG arch=none
+ENV ARCH=$arch
+
+COPY qemu/qemu-$ARCH-static* /usr/bin/
 
 ARG LDAP_OPENLDAP_GID
 ARG LDAP_OPENLDAP_UID
